@@ -3,7 +3,7 @@
 ## AGENDA
 1. What is DevOps and DevSecOps?
 2. History of DevOps.
-3. Phases / Stages in DevSecOps in Enterprice.
+3. Phases / Stages in DevSecOps in Enterprise.
 4. Walk through the Stages with Sample tools with live project.
 5. Career in DevSecOps.
 6. Questions.
