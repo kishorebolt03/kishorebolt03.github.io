@@ -44,3 +44,15 @@ Continuing with the web application example:
 - If any security issues are found, the build fails, and the team is notified to fix the problem before the code can be deployed.
 
 By integrating security into the development and operations process, DevSecOps ensures that the software is both functional and secure from the very beginning.
+
+### Some Images
+1. ![DevSecOps Image 1](https://www.google.com/url?sa=i&url=https%3A%2F%2Fdevsecopsguides.com%2Fdocs%2Fplan-develop%2Fmethodology%2F&psig=AOvVaw0C8z1uvMdUwx4viaMwOXQl&ust=1725187907223000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjEhfaHn4gDFQAAAAAdAAAAABAI)
+2. ![DevSecOps Image 2](https://www.google.com/url?sa=i&url=https%3A%2F%2Fdevops.com%2Fthe-basics-devsecops-adoption%2F&psig=AOvVaw0C8z1uvMdUwx4viaMwOXQl&ust=1725187907223000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjEhfaHn4gDFQAAAAAdAAAAABAS)
+3. ![image 3](https://github.com/user-attachments/assets/8ae84984-5c70-4389-bd18-797361e117c6)
+4. ![image 4](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.linkedin.com%2Fposts%2Fplanetlevel_devsecops-appsec-activity-6613817379182919680-de4A&psig=AOvVaw0C8z1uvMdUwx4viaMwOXQl&ust=1725187907223000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjEhfaHn4gDFQAAAAAdAAAAABAw)
+5. ![image 5](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2Fcloud-native-daily%2Fbuilding-a-devsecops-pipeline-with-open-source-tools-ad4fd0e13515&psig=AOvVaw0C8z1uvMdUwx4viaMwOXQl&ust=1725187907223000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjEhfaHn4gDFQAAAAAdAAAAABBE)
+6. ![image 6](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rainforest.tech%2Fdevsecops%2Ffrom-devops-to-devsecops-integrating-security-into-your-development-pipeline%2F&psig=AOvVaw0C8z1uvMdUwx4viaMwOXQl&ust=1725187907223000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjEhfaHn4gDFQAAAAAdAAAAABBi)
+
+### Demo Time!!!
+
+
