@@ -46,12 +46,13 @@ Continuing with the web application example:
 By integrating security into the development and operations process, DevSecOps ensures that the software is both functional and secure from the very beginning.
 
 ### Some Images
-1. ![DevSecOps Image 1](https://www.google.com/url?sa=i&url=https%3A%2F%2Fdevsecopsguides.com%2Fdocs%2Fplan-develop%2Fmethodology%2F&psig=AOvVaw0C8z1uvMdUwx4viaMwOXQl&ust=1725187907223000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjEhfaHn4gDFQAAAAAdAAAAABAI)
-2. ![DevSecOps Image 2](https://www.google.com/url?sa=i&url=https%3A%2F%2Fdevops.com%2Fthe-basics-devsecops-adoption%2F&psig=AOvVaw0C8z1uvMdUwx4viaMwOXQl&ust=1725187907223000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjEhfaHn4gDFQAAAAAdAAAAABAS)
-3. ![image 3](https://github.com/user-attachments/assets/8ae84984-5c70-4389-bd18-797361e117c6)
-4. ![image 4](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.linkedin.com%2Fposts%2Fplanetlevel_devsecops-appsec-activity-6613817379182919680-de4A&psig=AOvVaw0C8z1uvMdUwx4viaMwOXQl&ust=1725187907223000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjEhfaHn4gDFQAAAAAdAAAAABAw)
-5. ![image 5](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2Fcloud-native-daily%2Fbuilding-a-devsecops-pipeline-with-open-source-tools-ad4fd0e13515&psig=AOvVaw0C8z1uvMdUwx4viaMwOXQl&ust=1725187907223000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjEhfaHn4gDFQAAAAAdAAAAABBE)
-6. ![image 6](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rainforest.tech%2Fdevsecops%2Ffrom-devops-to-devsecops-integrating-security-into-your-development-pipeline%2F&psig=AOvVaw0C8z1uvMdUwx4viaMwOXQl&ust=1725187907223000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjEhfaHn4gDFQAAAAAdAAAAABBi)
+1. ![image](https://github.com/user-attachments/assets/bae4abd9-4269-4b70-bcac-5ba4e4000623)
+2. ![image](https://github.com/user-attachments/assets/19783fad-42c8-4b90-9ed2-0b879efc9635)
+3. ![image](https://github.com/user-attachments/assets/8943d3fc-55af-4513-8b2c-59edd4cb112f)
+4. ![image](https://github.com/user-attachments/assets/ca4da463-89ad-43e8-89f0-4941d6da8d6b)
+5. ![image](https://github.com/user-attachments/assets/c6c2ecc1-328f-4032-abe0-81b66bfc6ff2)
+6. ![image](https://github.com/user-attachments/assets/31129e32-378b-46fc-ac11-96c349eb400e)
+
 
 ### Demo Time!!!
 
