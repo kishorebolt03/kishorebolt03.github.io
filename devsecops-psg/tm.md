@@ -1,5 +1,3 @@
-Absolutely! Threat modeling is a great way to identify potential security risks in your application and visualize how they might be exploited. For the Flask application with an XSS vulnerability, we'll go through the key steps of threat modeling and create some diagrams to illustrate the risks and mitigations.
-
 ### Key Steps in Threat Modeling
 
 1. **Identify Assets**: Determine what needs protection. In your Flask app, assets might include:
@@ -51,5 +49,8 @@ This table lists threats based on STRIDE categories and suggests mitigation stra
 I'll create a simple data flow diagram (DFD) and a basic threat modeling diagram for your Flask application. Please hold on for a moment while I generate these visuals.
 
 Here is the Data Flow Diagram (DFD) for your basic Flask web application. It visualizes the data flow from the user submitting the form, through the server processing, to the data being displayed back to the user. The entry points for potential XSS threats are highlighted around user input fields and data display.
+
+![image](https://github.com/user-attachments/assets/ef4dd466-4255-428a-b1ce-9f195298a826)
+
 
 This diagram should help you identify and understand where security measures are needed, particularly against XSS vulnerabilities. Let me know if you'd like any adjustments or additional diagrams!
