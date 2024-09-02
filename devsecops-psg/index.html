@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        #fileList {
+            list-style: none;
+            padding: 0;
+        }
+        #fileList li {
+            margin: 5px 0;
+        }
+        #markdown-content {
+            border: 1px solid #ddd;
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Markdown Files</h1>
+    <ul id="fileList"></ul>
+    <div id="markdown-content"></div>
+
+    <script>
+        // Simulated files array - replace this with server-side data fetching
+        const files = [
+            'file1.md',
+            'file2.md',
+            'file3.md'
+        ];
+
+        const fileList = document.getElementById('fileList');
+        const markdownContent = document.getElementById('markdown-content');
+
+        // Function to render markdown to HTML using marked library
+        function renderMarkdown(content) {
+            markdownContent.innerHTML = marked(content);
+        }
+
+        // Function to fetch and display the content of the selected file
+        function loadMarkdown(file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(text => renderMarkdown(text))
+                .catch(error => console.error('Error loading markdown:', error));
+        }
+
+        // Create list items for each file
+        files.forEach(file => {
+            const li = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = '#';
+            link.textContent = file;
+            link.onclick = () => loadMarkdown(file);
+            li.appendChild(link);
+            fileList.appendChild(li);
+        });
+    </script>
+    <!-- Marked library for rendering Markdown to HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+</html>
