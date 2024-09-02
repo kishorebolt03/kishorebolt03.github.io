@@ -52,6 +52,8 @@ By integrating security into the development and operations process, DevSecOps e
 4. ![image](https://github.com/user-attachments/assets/ca4da463-89ad-43e8-89f0-4941d6da8d6b)
 5. ![image](https://github.com/user-attachments/assets/c6c2ecc1-328f-4032-abe0-81b66bfc6ff2)
 6. ![image](https://github.com/user-attachments/assets/31129e32-378b-46fc-ac11-96c349eb400e)
+7. ![image](https://github.com/user-attachments/assets/36307cb2-a1e8-42fc-bc65-4454ebb688c0)
+
 
 
 ### Demo Time!!!
