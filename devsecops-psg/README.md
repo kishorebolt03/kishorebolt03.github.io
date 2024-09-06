@@ -45,6 +45,38 @@ Continuing with the web application example:
 
 By integrating security into the development and operations process, DevSecOps ensures that the software is both functional and secure from the very beginning.
 
+### Pre-requisites
+
+To become a DevSecOps engineer, you need a combination of technical skills, knowledge of security best practices, and experience in development and operations. Here are the key prerequisites:
+
+1. **Technical Skills:**
+   - **Programming/Scripting:** Proficiency in languages like Python, Go, Ruby, or JavaScript.
+   - **Operating Systems:** Familiarity with Linux/Unix and Windows environments.
+   - **Version Control:** Understanding of Git and other version control systems.
+
+2. **DevOps Knowledge:**
+   - **CI/CD Pipelines:** Experience with tools like Jenkins, GitLab CI, CircleCI, or GitHub Actions.
+   - **Configuration Management:** Knowledge of Ansible, Puppet, Chef, or Terraform.
+   - **Containerization and Orchestration:** Proficiency in Docker, Kubernetes, and Helm.
+
+3. **Security Fundamentals:**
+   - **Application Security:** Understanding secure coding practices and common vulnerabilities (OWASP Top Ten).
+   - **Infrastructure Security:** Knowledge of network security, firewalls, and encryption.
+   - **Security Tools:** Familiarity with tools like Snyk, Aqua, Checkmarx, and OWASP ZAP.
+
+4. **Cloud Computing:**
+   - **Cloud Platforms:** Experience with AWS, Azure, or Google Cloud.
+   - **Security in the Cloud:** Understanding cloud security best practices and services.
+
+5. **Soft Skills:**
+   - **Problem-Solving:** Ability to identify and resolve security issues in development and operations.
+   - **Collaboration:** Strong communication skills to work with cross-functional teams.
+   - **Continuous Learning:** Stay updated with the latest security threats and DevSecOps trends.
+
+6. **Certifications (Optional but Beneficial):**
+   - **Certifications:** Consider certifications like Certified DevSecOps Professional (CDP), AWS Certified Security – Specialty, or Certified Information Systems Security Professional (CISSP).
+
+
 ### Some Images
 1. ![image](https://github.com/user-attachments/assets/bae4abd9-4269-4b70-bcac-5ba4e4000623)
 2. ![image](https://github.com/user-attachments/assets/19783fad-42c8-4b90-9ed2-0b879efc9635)
