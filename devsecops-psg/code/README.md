@@ -20,6 +20,7 @@
    cd sample-flaskapp
    python3 app.py
    ```
+6. Open your web browser and go to http://127.0.0.1:5000 or http://localhost:5000 
 
 ## Windows 
 
