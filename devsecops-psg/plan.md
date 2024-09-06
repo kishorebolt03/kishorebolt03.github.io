@@ -13,7 +13,7 @@
 Desc: Bulding a python application to get a input from user and print the input back to the user on a path like /<input-text>. 
 Framework used : Flask
 
-Source code is [here](../code/)
+Source code is [here](./code/)
 
 ## Git
 
