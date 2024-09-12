@@ -95,7 +95,7 @@ Sample Python project:
 - [Plan](./plan.md)
 - [Threat Modelling](./tm.md)
 - Demo in local system
-- [Real world setup]()
+- Real world setup
 
 ### Career in DevSecOps
 
