@@ -116,6 +116,8 @@ Pull the latest image and docker-compose up.
     11. Deploy Using Terraform (TF) into AWS or other IAAS / PAAS providers.
 </div>
 
+<center>⬇️</center>
+
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     12. Post deployment scans using Qualys / Crowdstrike / AWS.
 </div>
