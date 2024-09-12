@@ -90,12 +90,12 @@ To become a DevSecOps engineer, you need a combination of technical skills, know
 
 ### Demo Time!!!
 
+Sample Python project:
 
-Files:
 - [Plan](./plan.md)
 - [Threat Modelling](./tm.md)
-
-
+- Demo in local system
+- [Real world setup]()
 
 
 # References
