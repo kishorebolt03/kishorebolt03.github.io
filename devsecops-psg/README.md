@@ -97,7 +97,12 @@ Sample Python project:
 - Demo in local system
 - [Real world setup]()
 
+### Career in DevSecOps
+
+DevSecOps is a professional career that starts from software development. Most of the engineers in the DevSecOps field started in software development (or) system administration, then later these professionals would be transitioned into DevSecOps. Another related certification is Certified DevSecOps Professional (CDP) & Certified DevSecOps Expert (CDE). If you’re someone who is looking for a high leadership level certification in DevSecOps  then you can take Certified DevSecOps Leader certification (CDL).
+
+
 
 # References
 - Google Images
-- 
+- https://www.practical-devsecops.com/devsecops-engineer/
