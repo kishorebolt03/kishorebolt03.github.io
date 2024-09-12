@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSecOps DFD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .step {
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+        .arrow {
+            font-size: 24px;
+            color: #333;
+            margin: -10px 0 -10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="step">1. Plan / Architectural Designing<br>with "Security as Default"</div>
+    <div class="arrow">⬇️</div>
+
+    <div class="step">2. Threat Modelling</div>
+    <div class="arrow">⬇️</div>
+
+    <div class="step">3. Pylint Check in Local Machine</div>
+    <div class="arrow">⬇️</div>
+
+    <div class="step">4. Trufflehog Secret Scan<br>(Pre-commit in Local Machine)</div>
+    <div class="arrow">⬇️</div>
+
+    <div class="step">5. IAC Setup for Deploying<br>in AWS or Other Cloud</div>
+    <div class="arrow">⬇️</div>
+
+    <div class="step">6. CI/CD Setup Using Jenkins / CircleCI</div>
+    <div class="arrow">⬇️</div>
+
+    <div class="step">7. In CI/CD: SCA / Component Analysis<br>(Dependency Track), DAST (OWASP Zap)</div>
+    <div class="arrow">⬇️</div>
+
+    <div class="step">8. Build the Image</div>
+    <div class="arrow">⬇️</div>
+
+    <div class="step">9. Scan the Image Using Trivy</div>
+    <div class="arrow">⬇️</div>
+
+    <div class="step">10. Scan the IAC Using Trivy</div>
+    <div class="arrow">⬇️</div>
+
+    <div class="step">11. Deploy Using Terraform (TF)</div>
+
+</body>
+</html>
