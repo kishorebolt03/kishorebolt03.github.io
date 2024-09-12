@@ -36,6 +36,20 @@ Pull the latest image and docker-compose up.
 
 ### Plan
 
+- Plan & Threat Modeling
+- Git
+  - Pre-commit checks:
+    - lint check
+    - Secret scanner
+  - DependaBot checks on push to Github
+- SCA (optional)
+- SAST
+- DAST (optional)
+- Build
+- Scan Image
+- IAC Scan
+- Deploy application in pythonanywhere.
+
 #### DFD
 
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
@@ -101,18 +115,3 @@ Pull the latest image and docker-compose up.
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     11. Deploy Using Terraform (TF) into AWS or other IAAS / PAAS providers.
 </div>
-
-
-- Plan & Threat Modeling
-- Git
-  - Pre-commit checks:
-    - lint check
-    - Secret scanner
-  - DependaBot checks on push to Github
-- SCA (optional)
-- SAST
-- DAST (optional)
-- Build
-- Scan Image
-- IAC Scan
-- Deploy application in pythonanywhere.
