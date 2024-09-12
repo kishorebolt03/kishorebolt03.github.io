@@ -42,61 +42,61 @@ Pull the latest image and docker-compose up.
     1. Plan / Architectural Designing<br>with "Security as Default"
 </div>
 
-⬇️
+<center>⬇️</center>
 
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     2. Threat Modelling
 </div>
 
-⬇️
+<center>⬇️</center>
 
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     3. Pylint Check in Local Machine
 </div>
 
-⬇️
+<center>⬇️</center>
 
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     4. Trufflehog Secret Scan<br>(Pre-commit in Local Machine)
 </div>
 
-⬇️
+<center>⬇️</center>
 
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     5. IAC Setup for Deploying<br>in AWS or Other Cloud
 </div>
 
-⬇️
+<center>⬇️</center>
 
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     6. CI/CD Setup Using Jenkins / CircleCI
 </div>
 
-⬇️
+<center>⬇️</center>
 
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     7. In CI/CD: SCA / Component Analysis<br>(Dependency Track), DAST (OWASP Zap)
 </div>
 
-⬇️
+<center>⬇️</center>
 
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     8. Build the Image
 </div>
 
-⬇️
+<center>⬇️</center>
 
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     9. Scan the Image Using Trivy
 </div>
 
-⬇️
+<center>⬇️</center>
 
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     10. Scan the IAC Using Trivy
 </div>
 
-⬇️
+<center>⬇️</center>
 
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     11. Deploy Using Terraform (TF) into AWS or other IAAS / PAAS providers.
