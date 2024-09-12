@@ -32,7 +32,7 @@ Push the image to docker hub as public image. (because this is a sample project)
 Pull the latest image and docker-compose up. 
 
 
-## DevSecOps Pipeline.
+## [DevSecOps Pipeline](./plandfd.html)
 
 - Plan & Threat Modeling
 - Git
@@ -45,4 +45,5 @@ Pull the latest image and docker-compose up.
 - DAST (optional)
 - Build
 - Scan Image
+- IAC Scan
 - Deploy application in pythonanywhere.
