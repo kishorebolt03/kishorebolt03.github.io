@@ -36,6 +36,9 @@ brew install aquasecurity/trivy/trivy
 
 trivy image sample-flaskapp:latest
 
+#IAC scan 
+#Trivy / TFsec
+
 #Deploy
 docker-compose up
 
