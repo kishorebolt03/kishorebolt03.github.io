@@ -10,9 +10,9 @@
 
 ### Plan
 
-Desc: Bulding a python application to get a input from user and print the input back to the user on a path like /input-text.
-Framework used : Flask
-Source code is [here](./code/)
+<p>Desc: Bulding a python application to get a input from user and print the input back to the user on a path like /input-text.</p>
+<p>Framework used : Flask</p>
+<p>Source code is [here](./code/)</p>
 
 ## Git
 
