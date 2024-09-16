@@ -4,7 +4,7 @@
 
 1. Create a new dir
 2. Download the below files
-  - [app.py](./sample-flaspapp/app.py)
+  - [app.py](./sample-flaskapp/app.py)
   - [requirements.txt](./sample-flaskapp/requirements.txt)
   - [templates/index.html](./sample-flaskapp/templates/index.html)
 
