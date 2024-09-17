@@ -40,5 +40,12 @@ trivy image sample-flaskapp:latest
 #Trivy / TFsec
 
 #Deploy
-docker-compose up
+docker-compose up -d
+
+#Container runtime check using Clair - https://github.com/quay/clair
+# https://quay.github.io/clair/
+
+
+
+
 
