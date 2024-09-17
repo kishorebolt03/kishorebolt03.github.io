@@ -118,5 +118,11 @@ Pull the latest image and docker-compose up.
 <center>⬇️</center>
 
 <div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
+    12 Cointainer Security ( Cointainer orchestration tools like k8s, AWS ECS, etc.
+</div>
+
+<center>⬇️</center>
+
+<div style="border: 2px solid #333; border-radius: 8px; padding: 20px; width: 300px; text-align: center; margin: 10px auto; background-color: #fff;">
     12. Post deployment scans using Qualys / Crowdstrike / AWS.
 </div>
