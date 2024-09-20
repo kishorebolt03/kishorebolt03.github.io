@@ -12,7 +12,7 @@
 
 <p>Desc: Bulding a python application to get a input from user and print the input back to the user on a path like /input-text.</p>
 <p>Framework used : Flask</p>
-Source code is [here](./code)
+Source code is [here](https://kishorebolt03.github.io/devsecops-psg/code/)
   
 ## Git
 
