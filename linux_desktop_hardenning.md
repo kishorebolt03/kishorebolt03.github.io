@@ -1,4 +1,4 @@
-# Linux Desktop Hardenning
+# Linux Desktop Hardenning for Enterprise
 
 - Disable root login
 - Disable ssh for root user and SSH hardenning
