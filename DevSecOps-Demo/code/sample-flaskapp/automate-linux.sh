@@ -47,10 +47,10 @@ semgrep scan
 # fi
 
 # Check and install Docker
-if ! command -v docker &> /dev/null; then
-    sudo apt install -y docker.io
-    sudo systemctl enable --now docker
-fi
+# if ! command -v docker &> /dev/null; then
+#     sudo apt install -y docker.io
+#     sudo systemctl enable --now docker
+# fi
 
 # Build Docker image
 docker build -t sample-flaskapp:latest . -f Dockerfile
