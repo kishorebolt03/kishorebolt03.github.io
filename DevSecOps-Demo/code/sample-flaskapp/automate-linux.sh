@@ -20,8 +20,8 @@ if ! command -v git &> /dev/null; then
     sudo apt install -y git
 fi
 
-if ! pip3 show trufflehog &> /dev/null; then
-    pip3 install trufflehog
+if ! command -v trufflehog &> /dev/null; then
+    curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/main/scripts/install.sh | sudo sh -s -- -b /usr/local/bin
 fi
 
 # Run TruffleHog scan
