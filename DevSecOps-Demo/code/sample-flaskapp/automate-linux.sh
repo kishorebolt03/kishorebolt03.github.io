@@ -39,12 +39,12 @@ fi
 # Run Semgrep scan
 semgrep scan
 
-# Check and install OWASP ZAP if not installed
-if [ ! -d "ZAP_2_13_0" ]; then
-    wget -O ZAP_2_13_0_Linux.tar.gz https://github.com/zaproxy/zaproxy/releases/download/v2.13.0/ZAP_2_13_0_Linux.tar.gz
-    tar -xvzf ZAP_2_13_0_Linux.tar.gz
-    rm ZAP_2_13_0_Linux.tar.gz
-fi
+# # Check and install OWASP ZAP if not installed
+# if [ ! -d "ZAP_2_13_0" ]; then
+#     wget -O ZAP_2_13_0_Linux.tar.gz https://github.com/zaproxy/zaproxy/releases/download/v2.13.0/ZAP_2_13_0_Linux.tar.gz
+#     tar -xvzf ZAP_2_13_0_Linux.tar.gz
+#     rm ZAP_2_13_0_Linux.tar.gz
+# fi
 
 # Check and install Docker
 if ! command -v docker &> /dev/null; then
