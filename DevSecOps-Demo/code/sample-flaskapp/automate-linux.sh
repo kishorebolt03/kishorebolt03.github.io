@@ -86,7 +86,7 @@ if ! command -v docker-compose &> /dev/null; then
 fi
 
 # Deploy with Docker Compose
-docker-compose up -d
+docker compose up -d
 
 # Check and install Clair for container runtime scanning
 if ! command -v clair &> /dev/null; then
