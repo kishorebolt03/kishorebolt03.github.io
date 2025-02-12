@@ -84,22 +84,19 @@ To become a DevSecOps engineer, you need a combination of technical skills, know
 4. ![image](https://github.com/user-attachments/assets/ca4da463-89ad-43e8-89f0-4941d6da8d6b)
 5. ![image](https://github.com/user-attachments/assets/c6c2ecc1-328f-4032-abe0-81b66bfc6ff2)
 6. ![image](https://github.com/user-attachments/assets/31129e32-378b-46fc-ac11-96c349eb400e)
-7. ![image](https://github.com/user-attachments/assets/36307cb2-a1e8-42fc-bc65-4454ebb688c0)
-
-
 
 ### Demo Time!!!
 
 Sample Python project:
 
+Stages:
 - [Plan](./plan.md)
 - [Threat Modelling](./tm.md)
-- Demo in local system
-- Real world setup
-
-### Career in DevSecOps
-
-DevSecOps is a professional career that starts from software development. Most of the engineers in the DevSecOps field started in software development (or) system administration, then later these professionals would be transitioned into DevSecOps. Another related certification is Certified DevSecOps Professional (CDP) & Certified DevSecOps Expert (CDE). If you’re someone who is looking for a high leadership level certification in DevSecOps  then you can take Certified DevSecOps Leader certification (CDL).
+- [Git - pending](./git.md)
+- [SCA - pending](./sca.md)
+- [SAST - pending](./sast.md)
+- [DAST - pending](./dast.md)
+- [Build - pending](./build.md)
 
 
 

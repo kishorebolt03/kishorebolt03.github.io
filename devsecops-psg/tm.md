@@ -74,16 +74,16 @@ Certainly! Here’s a Data Flow Diagram (DFD) specifically to explain the threat
 +---------|---------+                           +---------|----------+
           |                                              ^
           |                                              |
-          | 1. User Input                               | 2. Displayed User Data
+          | 1. User Input                                | 2. Displayed User Data
           v                                              |
-+---------------------+                               +---------------------+
-|     Flask App       |                               |     Browser         |
-|                     |                               |                     |
-|  +---------------+  |                               |                     |
-|  | Process Input |  | <---- Output to User ----------|                     |
-|  | (Minimal)     |  |                               |                     |
-|  +---------------+  |                               |                     |
-+---------|-----------+                               +---------------------+
++---------------------+                          +---------------------+
+|     Flask App       |                          |     Browser         |
+|                     |                          |                     |
+|  +---------------+  |                          |                     |
+|  | Process Input |  | <---- Output to User ----|                     |
+|  | (Minimal)     |  |                          |                     |
+|  +---------------+  |                          |                     |
++---------|-----------+                          +---------------------+
           |
           | 3. Vulnerable Data
           v
