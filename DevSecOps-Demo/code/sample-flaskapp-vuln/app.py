@@ -12,13 +12,18 @@ def index():
         return redirect(url_for('display_input', input_data=text_input))
 
     # Render the input form
-    return render_template('index.html')
+    return '''
+        <form method="post">
+            <label for="text_input">Enter Text:</label>
+            <input type="text" id="text_input" name="text_input">
+            <button type="submit">Submit</button>
+        </form>
+    '''
 
 @app.route('/<input_data>')
 def display_input(input_data):
-    # Directly display the input data without sanitization (vulnerable to XSS)
+    # Vulnerable to XSS because it directly outputs user input
     return f"Input in uppercase: {input_data.upper()}<br>Original Input: {input_data}"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5000,debug=True)
-
+    app.run(host='0.0.0.0', port=5000, debug=True)

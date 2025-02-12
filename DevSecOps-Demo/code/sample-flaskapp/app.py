@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for, escape
 
 app = Flask(__name__)
 
@@ -12,13 +12,19 @@ def index():
         return redirect(url_for('display_input', input_data=text_input))
 
     # Render the input form
-    return render_template('index.html')
+    return '''
+        <form method="post">
+            <label for="text_input">Enter Text:</label>
+            <input type="text" id="text_input" name="text_input">
+            <button type="submit">Submit</button>
+        </form>
+    '''
 
 @app.route('/<input_data>')
 def display_input(input_data):
-    # Display the input data in uppercase
-    return f"Input in uppercase: {input_data.upper()}"
+    # Prevent XSS by escaping user input before displaying
+    escaped_input = escape(input_data)
+    return f"Input in uppercase: {escaped_input.upper()}<br>Original Input: {escaped_input}"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5000,debug=True)
-
+    app.run(host='0.0.0.0', port=5000, debug=True)
