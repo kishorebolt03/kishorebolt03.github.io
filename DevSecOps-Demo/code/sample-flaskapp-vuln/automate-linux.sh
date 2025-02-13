@@ -53,7 +53,7 @@ semgrep scan
 # fi
 
 # Build Docker image
-docker build -t sample-flaskapp-vuln:latest . -f Dockerfile
+docker build -t abhinavkishoregv/sample-flaskapp-vuln:latest . -f Dockerfile
 
 # Check and install Trivy for container scanning
 if ! command -v trivy &> /dev/null; then
