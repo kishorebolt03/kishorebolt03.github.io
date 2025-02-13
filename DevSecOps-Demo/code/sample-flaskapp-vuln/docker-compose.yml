@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   web:
-    image: sample-flaskapp-vuln:latest
+    image: abhinavkishoregv03/sample-flask:latest
     ports:
       - "5000:5000"
     working_dir: /app
