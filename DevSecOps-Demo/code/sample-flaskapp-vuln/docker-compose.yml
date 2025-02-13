@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   web:
-    image: abhinavkishoregv03/sample-flask:latest
+    image: abhinavkishoregv03/sample-flask:vuln
     ports:
       - "5000:5000"
     working_dir: /app
