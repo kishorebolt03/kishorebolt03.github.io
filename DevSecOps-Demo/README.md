@@ -92,11 +92,6 @@ Sample Python project:
 Stages:
 - [Plan](./plan.md)
 - [Threat Modelling](./tm.md)
-- [Git - pending](./git.md)
-- [SCA - pending](./sca.md)
-- [SAST - pending](./sast.md)
-- [DAST - pending](./dast.md)
-- [Build - pending](./build.md)
 
 
 
