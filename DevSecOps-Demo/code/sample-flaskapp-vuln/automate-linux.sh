@@ -53,8 +53,8 @@ semgrep scan
 # fi
 
 # Build Docker image
-docker build -t abhinavkishoregv/sample-flaskapp-vuln:latest . -f Dockerfile
-
+docker build -t abhinavkishoregv03/sample-flask:vuln . -f Dockerfile
+docker push abhinavkishoregv03/sample-flask:vuln
 # Check and install Trivy for container scanning
 if ! command -v trivy &> /dev/null; then
     sudo apt install -y wget
@@ -66,7 +66,7 @@ if ! command -v trivy &> /dev/null; then
 fi
 
 # Scan Docker image
-trivy image abhinavkishoregv/sample-flaskapp-vuln:latest
+trivy image abhinavkishoregv03/sample-flask:vuln
 
 # Check and install Terraform & TFSec for IAC scanning
 if ! command -v tfsec &> /dev/null; then
