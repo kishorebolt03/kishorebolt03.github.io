@@ -66,7 +66,7 @@ if ! command -v trivy &> /dev/null; then
 fi
 
 # Scan Docker image
-trivy image sample-flaskapp-vuln:latest
+trivy image abhinavkishoregv/sample-flaskapp-vuln:latest
 
 # Check and install Terraform & TFSec for IAC scanning
 if ! command -v tfsec &> /dev/null; then
