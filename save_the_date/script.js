@@ -7,45 +7,46 @@
    ===================================================================== */
 const CONFIG = {
   // ---- Couple ----
-  partnerOne: "Partner One",
-  partnerTwo: "Partner Two",
+  partnerOne: "Abhinavkishore GV",
+  partnerTwo: "Niharika SK",
 
-  // ---- Date & time ----
+  // ---- Date ----
   // ISO 8601, include a timezone offset so the countdown & calendar
-  // links are correct no matter where a guest is viewing from.
-  weddingDateISO: "2027-02-25T16:00:00+05:30",
-  ceremonyTime: "4:00 PM, 25th February 2027",
-  receptionTime: "7:30 PM, 25th February 2027",
+  // links are correct no matter where a guest is viewing from. This is
+  // the ceremony start — it's what the live countdown counts down to.
+  weddingDateISO: "2027-02-25T09:00:00+05:30",
 
-  // ---- Venue & location ----
-  venueName: "Guruvayur Temple",
-  venueNote: "A sacred and beautiful setting for our ceremony.",
-  city: "Guruvayur",
-  country: "Kerala, India",
+  // ---- Ceremony ----
+  ceremonyVenue: "Guruvayur Temple",
+  ceremonyCity: "Guruvayur",
+  ceremonyCountry: "Kerala, India",
+  ceremonyTime: "6:00 AM",
 
-  // ---- Other details ----
-  dressCode: "Garden formal — champagne, ivory & soft neutrals, please.",
-  travel: [
-    "Nearest airport: Calicut International Airport (CCJ), ~30 mins away.",
-    "Recommended stay: a few heritage stays near the temple town.",
-    "A shuttle will be arranged between the hotel and venue — details to follow.",
-  ],
+  // ---- Reception ----
+  // Assumed to be the same day as the ceremony — update weddingDateISO's
+  // date portion too if that's not the case.
+  receptionVenue: "Arav Hall",
+  receptionCity: "Coimbatore",
+  receptionCountry: "Tamil Nadu, India",
+  receptionTime: "6:00 PM",
 
-  // ---- RSVP ----
-  rsvpUrl: "mailto:youremail@example.com?subject=RSVP%20-%20Wedding",
-  rsvpBy: "31 December 2026",
+  // ---- A short note to your guests ----
+  message:
+    "Love has brought us together, and we can't wait to begin this beautiful journey as one. We would be so happy to have your blessings and company as we say \u2018I do\u2019.",
 
   // ---- Photo ----
   mainPhoto: "assets/placeholder-couple.svg",
-  mainPhotoAlt: "Portrait of Partner One and Partner Two",
+  mainPhotoAlt: "Portrait of Abhinavkishore and Niharika",
 
   // ---- Calendar event ----
-  calendarDurationHours: 3,
+  // Spans from the ceremony start through the end of the reception.
+  calendarDurationHours: 12,
 };
 
 /* ---- Derived values (computed once, do not edit) ---- */
 CONFIG.coupleNames = `${CONFIG.partnerOne} & ${CONFIG.partnerTwo}`;
-CONFIG.locationLine = `${CONFIG.city}, ${CONFIG.country}`;
+CONFIG.ceremonyLocationLine = `${CONFIG.ceremonyCity}, ${CONFIG.ceremonyCountry}`;
+CONFIG.receptionLocationLine = `${CONFIG.receptionCity}, ${CONFIG.receptionCountry}`;
 
 (function deriveDateDisplay() {
   const d = new Date(CONFIG.weddingDateISO);
@@ -56,8 +57,12 @@ CONFIG.locationLine = `${CONFIG.city}, ${CONFIG.country}`;
   }
 })();
 
-CONFIG.mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  `${CONFIG.venueName}, ${CONFIG.city}, ${CONFIG.country}`
+CONFIG.ceremonyMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `${CONFIG.ceremonyVenue}, ${CONFIG.ceremonyCity}, ${CONFIG.ceremonyCountry}`
+)}`;
+
+CONFIG.receptionMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `${CONFIG.receptionVenue}, ${CONFIG.receptionCity}, ${CONFIG.receptionCountry}`
 )}`;
 
 /* =====================================================================
@@ -88,18 +93,11 @@ function applyConfig() {
     photo.alt = CONFIG.mainPhotoAlt;
   }
 
-  const mapLink = document.getElementById("map-link");
-  if (mapLink) mapLink.href = CONFIG.mapUrl;
+  const mapLinkCeremony = document.getElementById("map-link-ceremony");
+  if (mapLinkCeremony) mapLinkCeremony.href = CONFIG.ceremonyMapUrl;
 
-  // Travel & accommodation list
-  const travelList = document.getElementById("travel-list");
-  if (travelList && Array.isArray(CONFIG.travel)) {
-    CONFIG.travel.forEach((item) => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      travelList.appendChild(li);
-    });
-  }
+  const mapLinkReception = document.getElementById("map-link-reception");
+  if (mapLinkReception) mapLinkReception.href = CONFIG.receptionMapUrl;
 
   // document title / meta description (best-effort; social-preview
   // crawlers read the static <head> markup, not this)
@@ -265,8 +263,8 @@ const eventEnd = new Date(
   eventStart.getTime() + CONFIG.calendarDurationHours * 60 * 60 * 1000
 );
 const eventTitle = `${CONFIG.coupleNames}'s Wedding`;
-const eventLocation = `${CONFIG.venueName}, ${CONFIG.city}, ${CONFIG.country}`;
-const eventDescription = `Save the date — ${CONFIG.coupleNames} are getting married! Ceremony at ${CONFIG.ceremonyTime}.`;
+const eventLocation = `${CONFIG.ceremonyVenue}, ${CONFIG.ceremonyCity}; ${CONFIG.receptionVenue}, ${CONFIG.receptionCity}`;
+const eventDescription = `Save the date — ${CONFIG.coupleNames} are getting married! Ceremony at ${CONFIG.ceremonyTime} (${CONFIG.ceremonyVenue}, ${CONFIG.ceremonyCity}). Reception at ${CONFIG.receptionTime} (${CONFIG.receptionVenue}, ${CONFIG.receptionCity}).`;
 
 // -- Google Calendar link --
 const googleCalendarLink = document.getElementById("google-calendar-link");

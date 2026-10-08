@@ -3,7 +3,8 @@
    Edit the custom properties below to change the entire palette & fonts.
    ===================================================================== */
 :root {
-  /* ---- Palette: warm champagne / ivory / beige / blush ---- */
+  /* ---- Palette: warm champagne / ivory / beige / blush (default:
+     "Elegant" theme, light mode) ---- */
   --ivory: #fbf6ef;
   --champagne: #f3e6d4;
   --champagne-deep: #e9d4b8;
@@ -19,9 +20,18 @@
   --gold-light: #d9be8f;
   --gold-deep: #8a6b3d;
   --maroon: #6b2f3a;
+  /* Only visibly distinct in the "grand" palette — stays equal to the
+     gold accent everywhere else so the default look is unchanged. */
+  --accent-green: var(--gold);
 
   --line: rgba(138, 107, 61, 0.35);
   --line-soft: rgba(138, 107, 61, 0.18);
+
+  /* Card / panel / button surfaces — kept as variables (rather than
+     hardcoded near-white hex) so dark mode can repaint them too. */
+  --surface: #fffdf9;
+  --surface-2: #fdf8ee;
+  --on-accent: #fff;
 
   --radius: 14px;
   --max-width: 1100px;
@@ -35,6 +45,128 @@
   --t-fast: 0.2s;
   --t-med: 0.5s;
   --t-slow: 1.1s;
+  /* Theme cross-fade — seamless but brisk, not sluggish. */
+  --t-theme: 0.4s;
+}
+
+/* =====================================================================
+   THEME VARIANTS
+   Toggled via data-theme="dark" and data-palette="grand" on <html>
+   (see the switches fixed to the top-right corner, and script.js).
+   ===================================================================== */
+
+/* ---- Dark mode, "Elegant" palette: a dark version of the default
+   champagne/gold theme — no red/green, just deepened & inverted. ---- */
+[data-theme="dark"] {
+  --ivory: #211b17;
+  --champagne: #2c241e;
+  --champagne-deep: #352b22;
+  --beige: #332a21;
+  --blush: #35251f;
+  --blush-deep: #3f2b26;
+
+  --ink: #f3e9dc;
+  --ink-soft: #cdb9a4;
+  --ink-faint: #a88e75;
+
+  --gold: #d9b876;
+  --gold-light: #e8cf9c;
+  --gold-deep: #c7a467;
+  --maroon: #e08a93;
+  --accent-green: var(--gold);
+
+  --line: rgba(217, 184, 118, 0.3);
+  --line-soft: rgba(217, 184, 118, 0.15);
+
+  --surface: #2c241e;
+  --surface-2: #332a21;
+}
+
+/* ---- Light mode, "Grand" palette: a festive Guruvayur / Tamil-Telugu
+   wedding theme — temple red, gold and a touch of auspicious green. ---- */
+[data-palette="grand"] {
+  --ivory: #fff8ec;
+  --champagne: #ffe9b8;
+  --champagne-deep: #f3cf7a;
+  --beige: #f6e2b0;
+  --blush: #ffd9d2;
+  --blush-deep: #f3b5ab;
+
+  --ink: #3a0d12;
+  --ink-soft: #6b2630;
+  --ink-faint: #96525a;
+
+  --gold: #caa43d;
+  --gold-light: #e4c669;
+  --gold-deep: #9c7a1f;
+  --maroon: #a51c30;
+  --accent-green: #2f6b4f;
+
+  --line: rgba(165, 28, 48, 0.35);
+  --line-soft: rgba(165, 28, 48, 0.18);
+
+  --surface: #fffaf1;
+  --surface-2: #fff1da;
+}
+
+/* ---- Dark mode + "Grand" palette: deep maroon night with glowing
+   temple gold, rose-red accents and a brighter green. ---- */
+[data-theme="dark"][data-palette="grand"] {
+  --ivory: #2a0e14;
+  --champagne: #3a1118;
+  --champagne-deep: #4a1620;
+  --beige: #45171c;
+  --blush: #4a1b22;
+  --blush-deep: #5c232b;
+
+  --ink: #fdeedd;
+  --ink-soft: #e3bfa6;
+  --ink-faint: #c99a85;
+
+  --gold: #e8c468;
+  --gold-light: #f3d98a;
+  --gold-deep: #c9a23f;
+  --maroon: #ff7a7e;
+  --accent-green: #4f9c74;
+
+  --line: rgba(232, 196, 104, 0.35);
+  --line-soft: rgba(232, 196, 104, 0.18);
+
+  --surface: #3a1118;
+  --surface-2: #451620;
+}
+
+/* Smooth, seamless theme cross-fade — applied broadly, but each
+   component's own interaction transitions (hover/focus/open states)
+   take precedence since they declare `transition` more specifically. */
+html,
+body,
+.intro,
+.intro__texture,
+.card__frame,
+.card__photo,
+.card__corner,
+.message,
+.countdown__item,
+.calendar-popover,
+.accordion,
+.accordion__item,
+.accordion__icon::before,
+.accordion__icon::after,
+.divider span,
+.footer,
+.switch__track,
+.switch__thumb,
+.envelope::before,
+.envelope__letter,
+.envelope__flap-left,
+.envelope__flap-right,
+.envelope__flap-bottom,
+.envelope__flap-top {
+  transition-property: background, background-color, background-image, color,
+    border-color, box-shadow;
+  transition-duration: var(--t-theme);
+  transition-timing-function: ease;
 }
 
 * {
@@ -96,7 +228,7 @@ svg {
   left: -999px;
   top: 0;
   background: var(--ink);
-  color: #fff;
+  color: var(--on-accent);
   padding: 0.6rem 1rem;
   z-index: 999;
   font-family: var(--sans);
@@ -116,6 +248,114 @@ summary:focus-visible,
   outline: 2px solid var(--gold-deep);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* =====================================================================
+   THEME TOGGLES — fixed top-right, visible on every screen (including
+   the opening/envelope screen, which sits above everything else).
+   ===================================================================== */
+.theme-toggles {
+  position: fixed;
+  top: max(0.85rem, env(safe-area-inset-top));
+  right: max(0.85rem, env(safe-area-inset-right));
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.switch__text {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--surface);
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.18);
+  transition: background-color var(--t-theme) ease, border-color var(--t-theme) ease,
+    color var(--t-theme) ease;
+}
+
+.switch__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.switch__track {
+  position: relative;
+  flex: none;
+  width: 50px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  transition: background-color var(--t-theme) ease, border-color var(--t-theme) ease;
+}
+
+.switch__icon {
+  position: relative;
+  z-index: 1;
+  font-size: 0.68rem;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+.switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gold-deep);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.35s var(--ease-soft), background-color var(--t-theme) ease;
+}
+
+.switch__input:checked ~ .switch__track .switch__thumb {
+  transform: translateX(24px);
+}
+
+.switch__input:focus-visible ~ .switch__track {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 2px;
+}
+
+/* Give the "grand" palette switch its own thumb/track accent so it
+   reads as a distinct control from the dark-mode switch. */
+#palette-toggle ~ .switch__track {
+  background: var(--surface-2);
+}
+
+#palette-toggle:checked ~ .switch__track .switch__thumb {
+  background: var(--maroon);
+}
+
+@media (max-width: 400px) {
+  .switch__text {
+    display: none;
+  }
 }
 
 /* =====================================================================
@@ -215,7 +455,7 @@ summary:focus-visible,
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, #fffdf8, var(--champagne-deep));
+  background: linear-gradient(160deg, var(--surface), var(--champagne-deep));
   border: 1px solid var(--gold-light);
   border-radius: 4px;
   box-shadow: 0 18px 32px rgba(138, 107, 61, 0.22);
@@ -227,7 +467,7 @@ summary:focus-visible,
   top: -14px;
   width: 82%;
   height: 92%;
-  background: #fffdfa;
+  background: var(--surface);
   border: 1px solid var(--gold-light);
   border-radius: 3px;
   transform: translateX(-50%) translateY(14px);
@@ -253,7 +493,7 @@ summary:focus-visible,
   top: 0;
   width: 50%;
   height: 100%;
-  background: linear-gradient(135deg, var(--champagne-deep), #fdf8ee);
+  background: linear-gradient(135deg, var(--champagne-deep), var(--surface-2));
   border: 1px solid var(--gold-light);
   z-index: 3;
 }
@@ -274,7 +514,7 @@ summary:focus-visible,
   bottom: 0;
   width: 100%;
   height: 70%;
-  background: linear-gradient(160deg, #fdf8ee, var(--champagne-deep));
+  background: linear-gradient(160deg, var(--surface-2), var(--champagne-deep));
   border: 1px solid var(--gold-light);
   clip-path: polygon(0 100%, 100% 100%, 100% 20%, 50% 60%, 0 20%);
   z-index: 4;
@@ -286,7 +526,7 @@ summary:focus-visible,
   top: 0;
   width: 100%;
   height: 62%;
-  background: linear-gradient(160deg, #fdf8ee, var(--champagne-deep));
+  background: linear-gradient(160deg, var(--surface-2), var(--champagne-deep));
   border: 1px solid var(--gold-light);
   clip-path: polygon(0 0, 100% 0, 50% 92%);
   transform-origin: top center;
@@ -343,7 +583,7 @@ summary:focus-visible,
 .intro__cta:hover,
 .intro__cta:focus-visible {
   background: var(--gold-deep);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .intro__cta:active {
@@ -390,7 +630,7 @@ summary:focus-visible,
 
 .card__frame {
   position: relative;
-  background: linear-gradient(165deg, #fffdf9, var(--ivory));
+  background: linear-gradient(165deg, var(--surface), var(--ivory));
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: clamp(2rem, 8vw, 2.75rem) clamp(1.1rem, 6vw, 1.75rem) clamp(1.6rem, 6vw, 2.25rem);
@@ -497,6 +737,34 @@ summary:focus-visible,
 }
 
 /* =====================================================================
+   A MESSAGE FROM THE COUPLE (sits between the card and the countdown)
+   ===================================================================== */
+.message {
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto 2.5rem;
+  padding: 0 0.75rem;
+}
+
+.message__text {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 4.2vw, 1.3rem);
+  color: var(--ink);
+  line-height: 1.65;
+  margin-bottom: 0.85rem;
+}
+
+.message__signature {
+  font-family: var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+}
+
+/* =====================================================================
    COUNTDOWN + ADD TO CALENDAR
    ===================================================================== */
 .countdown-section {
@@ -523,7 +791,7 @@ summary:focus-visible,
   padding: 0.6rem 0.3rem;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fffdf9;
+  background: var(--surface);
 }
 
 .countdown__num {
@@ -560,7 +828,7 @@ summary:focus-visible,
   justify-content: center;
   min-height: 44px;
   background: var(--ink);
-  color: #fff;
+  color: var(--on-accent);
   border: none;
   padding: 0.75rem 1.9rem;
   border-radius: 999px;
@@ -583,7 +851,7 @@ summary:focus-visible,
   top: calc(100% + 0.6rem);
   left: 50%;
   transform: translateX(-50%);
-  background: #fffdf9;
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 10px;
   box-shadow: 0 14px 30px -10px rgba(138, 107, 61, 0.3);
@@ -645,7 +913,7 @@ summary:focus-visible,
 .divider__diamond {
   width: 7px;
   height: 7px;
-  background: var(--gold);
+  background: var(--accent-green);
   transform: rotate(45deg);
   flex: none;
 }
@@ -675,7 +943,7 @@ summary:focus-visible,
 }
 
 .accordion__item {
-  background: #fffdf9;
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 10px;
   overflow: hidden;
@@ -813,7 +1081,7 @@ summary:focus-visible,
 .btn--outline:hover,
 .btn--outline:focus-visible {
   background: var(--gold-deep);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 /* =====================================================================
@@ -930,21 +1198,34 @@ summary:focus-visible,
   }
 
   .card {
-    grid-row: 1 / 3;
+    grid-column: 1;
+    grid-row: 1 / 4;
     margin-bottom: 0;
     position: sticky;
     top: 4rem;
   }
 
-  .countdown-section,
-  #details,
-  .footer {
+  /* Explicit placement for the right column — safer than relying on
+     grid auto-placement if sections are ever reordered in the HTML. */
+  .message {
     grid-column: 2;
-    max-width: 100%;
-    text-align: left;
+    grid-row: 1;
   }
 
   .countdown-section {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  #details {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .message,
+  .countdown-section,
+  #details {
+    max-width: 100%;
     text-align: left;
   }
 
@@ -956,6 +1237,7 @@ summary:focus-visible,
 
   .footer {
     grid-column: 1 / 3;
+    grid-row: 4;
     text-align: center;
   }
 }
