@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="600" viewBox="0 0 480 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6ead9" />
+      <stop offset="55%" stop-color="#eccfc3" />
+      <stop offset="100%" stop-color="#d9b98c" />
+    </linearGradient>
+  </defs>
+  <rect width="480" height="600" fill="url(#bg)" />
+  <g fill="none" stroke="#8a6b3d" stroke-width="2.5" opacity="0.85">
+    <circle cx="190" cy="250" r="52" />
+    <path d="M126 400c0-35 29-64 64-64s64 29 64 64" />
+    <circle cx="300" cy="250" r="52" />
+    <path d="M236 400c0-35 29-64 64-64s64 29 64 64" />
+  </g>
+  <text x="240" y="500" text-anchor="middle" fill="#6b2f3a" font-family="Georgia, serif" font-size="20" opacity="0.9">
+    Replace with your photo
+  </text>
+</svg>
