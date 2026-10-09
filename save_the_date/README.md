@@ -3,11 +3,14 @@
 An interactive, mobile-first "Save the Date" wedding website in a warm
 champagne / ivory / blush palette with an editorial, luxury-stationery
 feel. Opens with a romantic headline and a tap-to-open envelope, reveals
-an ornately framed invitation card (names, oval photo, date), a live
-countdown with "Add to Calendar" (Google Calendar + `.ics`), and
-expandable details (venue, location, times, dress code, travel, RSVP,
-and a message to guests). No build step — ready to host anywhere,
-including GitHub Pages.
+an ornately framed invitation card (names, oval photo, date), a message
+from the couple, a live countdown with "Add to Calendar" (Google
+Calendar + `.ics`), and expandable details for the Ceremony and
+Reception (separate venues, times, and map links). A fixed top-right
+pair of switches lets guests toggle dark/light mode and an "Elegant" /
+"Grand" (festive red-gold-green) color palette, with the choice
+remembered on their next visit. No build step — ready to host
+anywhere, including GitHub Pages.
 
 ## Structure
 
@@ -30,36 +33,42 @@ as its own repo. See "Host on GitHub Pages" below.
 
 ## Editing your content (one place for most things)
 
-Almost everything on the page — names, date, venue, location, ceremony /
-reception time, dress code, travel notes, RSVP link, and the main photo —
-is driven by a single `CONFIG` object at the top of **`script.js`**:
+Almost everything on the page — names, date, ceremony venue/time,
+reception venue/time, the message to guests, and the main photo — is
+driven by a single `CONFIG` object at the top of **`script.js`**:
 
 ```js
 const CONFIG = {
-  partnerOne: "Partner One",
-  partnerTwo: "Partner Two",
-  weddingDateISO: "2027-02-25T16:00:00+05:30",
-  ceremonyTime: "4:00 PM, 25th February 2027",
-  receptionTime: "7:30 PM, 25th February 2027",
-  venueName: "Guruvayur Temple",
-  city: "Guruvayur",
-  country: "Kerala, India",
-  dressCode: "Garden formal — champagne, ivory & soft neutrals, please.",
-  travel: [ /* array of travel/accommodation tips, one per bullet */ ],
-  rsvpUrl: "mailto:youremail@example.com?subject=RSVP%20-%20Wedding",
-  rsvpBy: "31 December 2026",
+  partnerOne: "Abhinavkishore GV",
+  partnerTwo: "Niharika SK",
+  weddingDateISO: "2027-02-25T09:00:00+05:30",
+
+  ceremonyVenue: "Guruvayur Temple",
+  ceremonyCity: "Guruvayur",
+  ceremonyCountry: "Kerala, India",
+  ceremonyTime: "6:00 AM",
+
+  receptionVenue: "Arav Hall",
+  receptionCity: "Coimbatore",
+  receptionCountry: "Tamil Nadu, India",
+  receptionTime: "6:00 PM",
+
+  message: "Love has brought us together, ...",
+
   mainPhoto: "assets/placeholder-couple.svg",
-  mainPhotoAlt: "Portrait of Partner One and Partner Two",
-  calendarDurationHours: 3,
+  mainPhotoAlt: "Portrait of Abhinavkishore and Niharika",
+  calendarDurationHours: 12,
 };
 ```
 
 Change a value once and it updates everywhere it appears on the page
-(card, countdown target, accordion panels, calendar links, footer) —
-the HTML uses `data-config="..."` attributes that `script.js` fills in
-automatically. **This also updates the live countdown and "Add to
-Calendar" links** — just edit `weddingDateISO` (keep the timezone
-offset, e.g. `+05:30`, so the countdown is correct for every guest).
+(card, message, countdown target, accordion panels, calendar links,
+footer, map links) — the HTML uses `data-config="..."` attributes that
+`script.js` fills in automatically. **This also updates the live
+countdown and "Add to Calendar" links** — just edit `weddingDateISO`
+(keep the timezone offset, e.g. `+05:30`, so the countdown is correct
+for every guest). `weddingDateISO` is treated as the ceremony start
+time; the ceremony and reception are assumed to be the same day.
 
 ### Things that must be edited separately
 
@@ -72,11 +81,10 @@ edit in `index.html`:
 - `twitter:title`, `twitter:description`, `twitter:image`
 - `<link rel="canonical" href="...">`
 
-Also edit directly in `index.html`:
-
-- The **"Our Message"** accordion paragraph — a free-form note to guests
-  (kept as prose in the HTML rather than config, since it's not a
-  single short value).
+`CONFIG.message` in `script.js` holds the free-form note to guests
+shown in the **A Message From the Couple** section (between the main
+card and the countdown) — edit it there, it's a single string so it
+stays in `CONFIG` rather than needing a separate HTML edit.
 
 ## Photos
 

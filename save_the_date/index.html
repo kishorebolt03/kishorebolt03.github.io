@@ -8,6 +8,22 @@
   <meta name="theme-color" content="#f3e6d4" />
   <link rel="canonical" href="https://kishorebolt03.github.io/save_the_date/" />
 
+  <!-- No-FOUC: apply the saved theme/palette to <html> before first
+       paint, so there's no flash of the default (light/elegant) theme
+       for returning visitors who picked dark mode / the Grand palette. -->
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem("std-theme");
+        var palette = localStorage.getItem("std-palette");
+        if (theme === "dark") document.documentElement.setAttribute("data-theme", "dark");
+        if (palette === "grand") document.documentElement.setAttribute("data-palette", "grand");
+      } catch (err) {
+        /* localStorage unavailable (privacy mode, etc.) — fall back to defaults */
+      }
+    })();
+  </script>
+
   <!-- Open Graph / social sharing preview (WhatsApp, Instagram, SMS, etc.) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Abhinavkishore GV &amp; Niharika SK — Save the Date" />
@@ -36,6 +52,28 @@
 <body>
 
   <a class="skip-link" href="#invitation">Skip to invitation</a>
+
+  <!-- ================= THEME + PALETTE TOGGLES ================= -->
+  <div class="theme-toggles">
+    <label class="switch">
+      <input type="checkbox" class="switch__input" id="theme-toggle" aria-label="Toggle dark mode" />
+      <span class="switch__track" aria-hidden="true">
+        <span class="switch__icon">&#9728;</span>
+        <span class="switch__thumb"></span>
+        <span class="switch__icon">&#127769;</span>
+      </span>
+      <span class="switch__text">Dark</span>
+    </label>
+    <label class="switch">
+      <input type="checkbox" class="switch__input" id="palette-toggle" aria-label="Toggle Grand palette" />
+      <span class="switch__track" aria-hidden="true">
+        <span class="switch__icon">&#10022;</span>
+        <span class="switch__thumb"></span>
+        <span class="switch__icon">&#128293;</span>
+      </span>
+      <span class="switch__text">Grand</span>
+    </label>
+  </div>
 
   <!-- ================= OPENING SCREEN ================= -->
   <div class="intro" id="intro">
@@ -118,7 +156,7 @@
       </p>
       <p class="message__signature">
         <span aria-hidden="true">&mdash;</span>
-        <span data-config="coupleNames">Abhinav &lt;3 Niha </span>
+        <span>Abhinav &amp; Niha</span>
       </p>
     </section>
 
@@ -198,7 +236,7 @@
 
     <footer class="footer">
       <div class="divider" aria-hidden="true"><span></span><span class="divider__diamond"></span><span></span></div>
-      <p>With love, <span data-config="coupleNames">Abhinav &lt;3 Niha</span></p>
+      <p>With love, <span>Abhinav &amp; Niha</span></p>
       <p class="footer__year">&copy; <span id="year"></span></p>
     </footer>
   </main>

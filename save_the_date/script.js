@@ -356,3 +356,82 @@ document.addEventListener("keydown", (event) => {
     }
   }
 });
+
+/* =====================================================================
+   THEME + PALETTE TOGGLES — dark/light mode and "Elegant"/"Grand"
+   palette, persisted via localStorage. The no-FOUC inline script in
+   <head> already applies the saved choice to <html> (data-theme /
+   data-palette) before first paint; this wires the two switches to
+   match & update that state, and keeps the theme-color meta tag (used
+   for the mobile browser chrome/status bar) in sync.
+   ===================================================================== */
+const THEME_STORAGE_KEY = "std-theme";
+const PALETTE_STORAGE_KEY = "std-palette";
+
+// Matches the --champagne value for each theme/palette combo in styles.css.
+const THEME_COLOR_BY_STATE = {
+  "light-elegant": "#f3e6d4",
+  "dark-elegant": "#2c241e",
+  "light-grand": "#ffe9b8",
+  "dark-grand": "#3a1118",
+};
+
+const themeToggle = document.getElementById("theme-toggle");
+const paletteToggle = document.getElementById("palette-toggle");
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+function currentThemeColorKey() {
+  const theme =
+    document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  const palette =
+    document.documentElement.getAttribute("data-palette") === "grand" ? "grand" : "elegant";
+  return `${theme}-${palette}`;
+}
+
+function updateThemeColorMeta() {
+  if (!themeColorMeta) return;
+  themeColorMeta.setAttribute(
+    "content",
+    THEME_COLOR_BY_STATE[currentThemeColorKey()] || THEME_COLOR_BY_STATE["light-elegant"]
+  );
+}
+
+function persist(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (err) {
+    /* localStorage unavailable (privacy mode, etc.) — non-essential, fail silently */
+  }
+}
+
+// Reflect whatever state the no-FOUC inline script already applied to
+// <html> (so the switches render correctly checked/unchecked on load).
+if (themeToggle) {
+  themeToggle.checked = document.documentElement.getAttribute("data-theme") === "dark";
+  themeToggle.addEventListener("change", () => {
+    if (themeToggle.checked) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      persist(THEME_STORAGE_KEY, "dark");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      persist(THEME_STORAGE_KEY, "light");
+    }
+    updateThemeColorMeta();
+  });
+}
+
+if (paletteToggle) {
+  paletteToggle.checked = document.documentElement.getAttribute("data-palette") === "grand";
+  paletteToggle.addEventListener("change", () => {
+    if (paletteToggle.checked) {
+      document.documentElement.setAttribute("data-palette", "grand");
+      persist(PALETTE_STORAGE_KEY, "grand");
+    } else {
+      document.documentElement.removeAttribute("data-palette");
+      persist(PALETTE_STORAGE_KEY, "elegant");
+    }
+    updateThemeColorMeta();
+  });
+}
+
+updateThemeColorMeta();
