@@ -25,7 +25,7 @@ const CONFIG = {
   // ---- Reception ----
   // Assumed to be the same day as the ceremony — update weddingDateISO's
   // date portion too if that's not the case.
-  receptionVenue: "Arav Hall",
+  receptionVenue: "AARAV WEDDING HALL",
   receptionCity: "Coimbatore",
   receptionCountry: "Tamil Nadu, India",
   receptionTime: "6:00 PM",
