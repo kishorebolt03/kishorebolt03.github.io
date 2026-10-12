@@ -8,7 +8,7 @@ from the couple, a live countdown with "Add to Calendar" (Google
 Calendar + `.ics`), and expandable details for the Ceremony and
 Reception (separate venues, times, and map links). A fixed top-right
 pair of switches lets guests toggle dark/light mode and an "Elegant" /
-"Grand" (festive red-gold-green) color palette, with the choice
+"Grand" (festive red-gold-green) color palette, with the choiceƒ
 remembered on their next visit. No build step — ready to host
 anywhere, including GitHub Pages.
 
@@ -48,7 +48,7 @@ const CONFIG = {
   ceremonyCountry: "Kerala, India",
   ceremonyTime: "6:00 AM",
 
-  receptionVenue: "Arav Hall",
+  receptionVenue: "AARAV WEDDING HALL",
   receptionCity: "Coimbatore",
   receptionCountry: "Tamil Nadu, India",
   receptionTime: "6:00 PM",
